@@ -37,7 +37,7 @@ public class Customer {
     @Column(name = "address")
     private String address;
 
-    @JsonIgnoreProperties(value = "ship")
+
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
     private List<Order> orders;
 

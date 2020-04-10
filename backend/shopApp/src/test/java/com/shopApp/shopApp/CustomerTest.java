@@ -1,16 +1,13 @@
 package com.shopApp.shopApp;
 
 
-import com.shopApp.shopApp.models.Customer;
+
 import com.shopApp.shopApp.models.Order;
-import com.shopApp.shopApp.models.OrderDetail;
-import com.shopApp.shopApp.models.StockItem;
 import org.junit.Before;
 import org.junit.Test;
 
 public class CustomerTest {
 
-    Customer customer;
 
     @Before
     public void before() {
@@ -28,21 +25,21 @@ public class CustomerTest {
 
     @Test
     public void canSomething() {
-//        cutomer
-        Customer cust1 = new Customer("turbo","bbb","John","Doe","aa@bb.com","Somewhere");
-
-//        stock item
-//        StockItem item1 = new StockItem("some","some",20.00, 30.00);
-
-//      order
-        Order order1 = new Order("today",cust1);
+////        cutomer
+//        Customer cust1 = new Customer("turbo","bbb","John","Doe","aa@bb.com","Somewhere");
+//
+////        stock item
+////        StockItem item1 = new StockItem("some","some",20.00, 30.00);
+//
+////      order
+//        Order order1 = new Order("today",cust1);
 
 //        order detail
 //        OrderDetail order1_detail = new OrderDetail(item1, 10, order1);
-
-        System.out.println(cust1);
-//        System.out.println(item1);
-        System.out.println(order1);
+//
+//        System.out.println(cust1);
+////        System.out.println(item1);
+//        System.out.println(order1);
 //        System.out.println(order1_detail);
 
     }

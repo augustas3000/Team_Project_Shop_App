@@ -5,8 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "stock_items")
-public class StockItem {
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,51 +14,28 @@ public class StockItem {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "image_link")
-    private String imgLink;
-
     @Column(name = "stock_price")
     private Double stockPrice;
 
     @Column(name = "retail_price")
     private Double retailPrice;
 
-    @Column(name = "quantity_in_stock")
-    private int quantityInStock;
+    @Column(name = "image_link")
+    private String imgLink;
 
 
-    @OneToMany(mappedBy = "stockItem", fetch = FetchType.LAZY)
-    private List<OrderDetail> orderDetails;
-
-
-
-    public StockItem(String name, String imgLink, Double stockPrice, Double retailPrice, int quantityInStock) {
+    public Product(String name, Double stockPrice, Double retailPrice, String imgLink) {
         this.name = name;
-        this.imgLink = imgLink;
         this.stockPrice = stockPrice;
         this.retailPrice = retailPrice;
-        this.orderDetails = new ArrayList<OrderDetail>();
-        this.quantityInStock = quantityInStock;
+        this.imgLink = imgLink;
     }
 
-    public StockItem() {
+    public Product() {
     }
 
-
-    public void addOrderDetails(OrderDetail orderDetail) {
-        this.orderDetails.add(orderDetail);
-    }
 
 //    getters
-
-
-    public int getQuantityInStock() {
-        return quantityInStock;
-    }
-
-    public List<OrderDetail> getOrderDetails() {
-        return orderDetails;
-    }
 
     public Long getId() {
         return id;
@@ -104,12 +80,5 @@ public class StockItem {
         this.retailPrice = retailPrice;
     }
 
-    public void setOrderDetails(List<OrderDetail> orderDetails) {
-        this.orderDetails = orderDetails;
-    }
-
-    public void setQuantityInStock(int quantityInStock) {
-        this.quantityInStock = quantityInStock;
-    }
 }
 
