@@ -1,8 +1,6 @@
 package com.shopApp.shopApp.models;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.*;
 import com.shopApp.shopApp.models.OrderProduct;
 import org.apache.tomcat.jni.Local;
 
@@ -25,11 +23,13 @@ public class Order {
 
     private String status;
 
+
     @OneToMany(mappedBy = "pk.order")
     @Valid
     private List<OrderProduct> orderProducts = new ArrayList<>();
 
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;

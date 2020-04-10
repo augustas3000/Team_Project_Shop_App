@@ -2,7 +2,6 @@ package com.shopApp.shopApp;
 
 
 
-import com.shopApp.shopApp.models.Order;
 import org.junit.Before;
 import org.junit.Test;
 

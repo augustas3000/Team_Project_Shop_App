@@ -1,6 +1,7 @@
 package com.shopApp.shopApp.models;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -38,6 +39,7 @@ public class Customer {
     private String address;
 
 
+    @JsonBackReference
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
     private List<Order> orders;
 

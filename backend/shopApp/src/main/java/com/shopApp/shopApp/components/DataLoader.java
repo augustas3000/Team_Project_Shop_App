@@ -40,27 +40,30 @@ public class DataLoader implements ApplicationRunner {
 
 
 //        create and save 7 items
-        Product item1 = new Product("Cup", 20.00,25.00,"link");
+        Product item1 = new Product("Nike","Air Jordan 1",9.0,50.00,85.95,"image");
         productRepository.save(item1);
 
-
-        Product item2 = new Product("Bra", 65.00,100.00,"link");
+        Product item2 = new Product("Nike","Air Force One",5.0,55.00,75.00,"image");;
         productRepository.save(item2);
 
-        Product item3 = new Product("TV", 500.00,1250.00,"link");
+        Product item3 = new Product("Nike","Air Air VapourMax",7.0,60.00,130.00,"image");;
         productRepository.save(item3);
 
-        Product item4 = new Product("Beattles LP", 27.00,35.00,"link");
+
+        Product item4 = new Product("Adidas","Gazelle",10.0,50.00,89.00,"image");
         productRepository.save(item4);
 
-        Product item5 = new Product("Toilet roll", 3.00,29.00,"link");
+        Product item5 = new Product("Adidas","Yeezy Powerphase",8.0,400.00,600.00,"image");
         productRepository.save(item5);
 
-        Product item6 = new Product("Bear Trap", 22.00,35.00,"link");
+
+        Product item6 = new Product("Adidas","By Pharrel",8.0,60.00,90.00,"image");
         productRepository.save(item6);
 
-        Product item7 = new Product("Mouse", 15.00,30.00,"link");
+
+        Product item7 = new Product("Converse","Chuck Taylor",9.0,35.00,70.00,"image");
         productRepository.save(item7);
+
 
 
 //        create three customers
@@ -76,29 +79,11 @@ public class DataLoader implements ApplicationRunner {
         Order order_gus = new Order(augustas);
         orderRepository.save(order_gus);
 
-        OrderProduct order_prod_gus = new OrderProduct(order_gus, item1, 20);
+        OrderProduct order_prod_gus = new OrderProduct(order_gus, item1, 1);
         orderProductRepository.save(order_prod_gus);
 
-        OrderProduct order_prod2_gus = new OrderProduct(order_gus, item2, 20);
+        OrderProduct order_prod2_gus = new OrderProduct(order_gus, item2, 2);
         orderProductRepository.save(order_prod2_gus);
 
-
-
-
-
-//        Order basket = new Order();
-//        orderRepository.save(basket);
-//
-//
-//        OrderProduct orderproduct1 = new OrderProduct(basket, item1, 20);
-//        orderProductRepository.save(orderproduct1);
-//
-////        basket.addOrderProduct(orderproduct1);
-////        orderRepository.save(basket);
-//
-//        OrderProduct ordprod2 = new OrderProduct(basket, item2, 40);
-//        orderProductRepository.save(ordprod2);
-
-//        orderRepository.save(basket)
     }
 }

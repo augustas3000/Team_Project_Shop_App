@@ -7,6 +7,15 @@ import javax.persistence.*;
 @Entity
 public class OrderProduct {
 
+//A composite primary key – also called a composite key – is a combination of two or more columns to form a primary key for a table.
+//In JPA, we have two options to define the composite keys: The @IdClass and @EmbeddedId annotations.
+//In order to define the composite primary keys, we should follow some rules:
+//
+//The composite primary key class must be public
+//It must have a no-arg constructor
+//It must define equals() and hashCode() methods - hence the method below.
+//It must be Serializable
+
     @EmbeddedId
     @JsonIgnore
     private OrderProductPK pk;

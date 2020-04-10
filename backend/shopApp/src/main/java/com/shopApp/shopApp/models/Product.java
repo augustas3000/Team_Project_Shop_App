@@ -11,8 +11,16 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "brand")
+    private String brand;
+
+    @Column(name = "model")
+    private String model;
+
+    @Column(name = "size")
+    private Double size;
+
+
 
     @Column(name = "stock_price")
     private Double stockPrice;
@@ -24,14 +32,18 @@ public class Product {
     private String imgLink;
 
 
-    public Product(String name, Double stockPrice, Double retailPrice, String imgLink) {
-        this.name = name;
+    public Product(String brand, String model, Double size, Double stockPrice, Double retailPrice, String imgLink) {
+        this.brand = brand;
+        this.model = model;
+        this.size = size;
         this.stockPrice = stockPrice;
         this.retailPrice = retailPrice;
         this.imgLink = imgLink;
     }
 
     public Product() {
+
+
     }
 
 
@@ -41,13 +53,18 @@ public class Product {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getBrand() {
+        return brand;
     }
 
-    public String getImgLink() {
-        return imgLink;
+    public String getModel() {
+        return model;
     }
+
+    public Double getSize() {
+        return size;
+    }
+
 
     public Double getStockPrice() {
         return stockPrice;
@@ -57,6 +74,11 @@ public class Product {
         return retailPrice;
     }
 
+    public String getImgLink() {
+        return imgLink;
+    }
+
+
 //    setters
 
 
@@ -64,13 +86,18 @@ public class Product {
         this.id = id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
-    public void setImgLink(String imgLink) {
-        this.imgLink = imgLink;
+    public void setModel(String model) {
+        this.model = model;
     }
+
+    public void setSize(Double size) {
+        this.size = size;
+    }
+
 
     public void setStockPrice(Double stockPrice) {
         this.stockPrice = stockPrice;
@@ -80,5 +107,8 @@ public class Product {
         this.retailPrice = retailPrice;
     }
 
+    public void setImgLink(String imgLink) {
+        this.imgLink = imgLink;
+    }
 }
 
