@@ -1,5 +1,8 @@
 package com.shopApp.shopApp.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,75 +18,91 @@ public class Order {
     @Column(name = "date")
     private String date;
 
+    @Column(name = "is_completed")
+    private String isCompleted;
+
+    @JsonIgnoreProperties(value= "orders")
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
-    @OneToMany(mappedBy= "order", fetch = FetchType.LAZY)
-    private List<OrderDetail> orderDetails;
-
-    @Column(name = "is_completed")
-    private Boolean isCompleted;
 
 
 
-    public Order(String date, Customer customer) {
+
+
+   @ManyToMany
+//   @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+   @JoinTable(
+           name = "orders_sneakers",
+    joinColumns = {@JoinColumn(name= "order_id", nullable= false,updatable = false)},
+           inverseJoinColumns = {@JoinColumn(name ="sneaker_id",nullable = false, updatable = false)}
+   )
+           private List<Sneaker> sneakers;
+
+
+
+
+
+
+    public Order(String date, Customer customer,String isCompleted) {
         this.date = date;
         this.customer = customer;
-        this.orderDetails = new ArrayList<OrderDetail>();
-        this.isCompleted = false;
+        this.isCompleted = isCompleted;
+        this.sneakers = new ArrayList<>();
+
     }
 
     public Order() {
     }
 
-
-    public void addOrderDetails(OrderDetail orderDetail) {
-        this.orderDetails.add(orderDetail);
+    public void addSneaker(Sneaker sneaker){
+        this.sneakers.add(sneaker);
     }
-
-//    getters
-
-
-    public Boolean getCompleted() {
-        return isCompleted;
-    }
-
-    public List<OrderDetail> getOrderDetails() {
-        return orderDetails;
-    }
-
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getDate() {
         return date;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
-
-//    setter
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getIsCompleted() {
+        return isCompleted;
+    }
+
+    public void setIsCompleted(String isCompleted) {
+        this.isCompleted = isCompleted;
+    }
+
+    public Customer getCustomer() {
+        return customer;
     }
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
 
-    public void setOrderDetails(List<OrderDetail> orderDetails) {
-        this.orderDetails = orderDetails;
+    public List<Sneaker> getSneakers() {
+        return sneakers;
     }
 
-    public void setCompleted(Boolean completed) {
-        isCompleted = completed;
+    public void setSneakers(List<Sneaker> sneakers) {
+        this.sneakers = sneakers;
     }
 }
+
+
+
+
+
+
+

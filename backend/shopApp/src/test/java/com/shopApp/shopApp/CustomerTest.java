@@ -3,8 +3,6 @@ package com.shopApp.shopApp;
 
 import com.shopApp.shopApp.models.Customer;
 import com.shopApp.shopApp.models.Order;
-import com.shopApp.shopApp.models.OrderDetail;
-import com.shopApp.shopApp.models.StockItem;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -35,10 +33,10 @@ public class CustomerTest {
 //        StockItem item1 = new StockItem("some","some",20.00, 30.00);
 
 //      order
-        Order order1 = new Order("today",cust1);
+        Order order1 = new Order("today",cust1,"NO");
 
 //        order detail
-//        OrderDetail order1_detail = new OrderDetail(item1, 10, order1);
+//        OrderDetail order1_detail = new OrdrDetail(item1, 10, order1);
 
         System.out.println(cust1);
 //        System.out.println(item1);
