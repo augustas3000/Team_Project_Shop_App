@@ -30,12 +30,8 @@ public class Sneaker {
     @Column(name = "retail_price")
     private Double retailPrice;
 
-    @ManyToMany
-    @JoinTable(
-            joinColumns= {@JoinColumn(name="sneaker_id", nullable = false, updatable = false)},
-            inverseJoinColumns = {@JoinColumn(name="order_id", nullable = false, updatable = false)}
-    )
-    private List<Order> orders;
+
+
 
 
     public Sneaker(String brand,String model, String imgLink,Double size, Double stockPrice, Double retailPrice){
@@ -45,23 +41,14 @@ public class Sneaker {
         this.imgLink = imgLink;
         this.stockPrice = stockPrice;
         this.retailPrice = retailPrice;
-        this.orders = new ArrayList<>();
+
 
     }
 
     public Sneaker() {
     }
 
-    public void addOrder(Order order){
-        this.orders.add(order);
-    }
-    public List<Order> getOrders() {
-        return orders;
-    }
 
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
-    }
 
     public Long getId() {
         return id;
