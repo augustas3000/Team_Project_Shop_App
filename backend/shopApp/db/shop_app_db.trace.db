@@ -1,4 +1,4 @@
-2020-04-09 17:25:19 database: flush
+2020-04-10 07:50:49 database: flush
 org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/augustas/Desktop/CX_G17/codeclan_work/final_project/shop_app/backend/shopApp/db/shop_app_db.mv.db [1.4.200/7]" [50000-200]
 	at org.h2.message.DbException.get(DbException.java:194)
 	at org.h2.message.DbException.convert(DbException.java:347)
@@ -50,7 +50,7 @@ Caused by: java.nio.channels.OverlappingFileLockException
 	at java.nio.channels.FileChannel.tryLock(FileChannel.java:1155)
 	at org.h2.mvstore.FileStore.open(FileStore.java:163)
 	... 28 more
-2020-04-09 17:25:19 jdbc[3]: exception
+2020-04-10 07:50:49 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Cannot drop "CUSTOMERS" because "FKPXTB8AWMI0DK6SMOH2VP1LITG" depends on it; SQL statement:
 drop table customers if exists [90107-200]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
