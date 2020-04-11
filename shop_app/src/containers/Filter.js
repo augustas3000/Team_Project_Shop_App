@@ -12,26 +12,26 @@ class Filter extends Component {
 
     this.state = {
     }
-
     this.onBrandSelect = this.onBrandSelect.bind(this);
     this.onModelSelect = this.onModelSelect.bind(this);
-
+    this.onSizeSelect = this.onSizeSelect.bind(this);
   }
 
 
   onBrandSelect(brandName) {
-    console.log(brandName);
+
     this.props.onFilterChangeBrand(brandName);
     // call a prop function from Shop container
   }
 
   onModelSelect(modelName) {
-    console.log(modelName);
+
     this.props.onFilterChangeModel(modelName);
   }
 
   onSizeSelect(size) {
-    console.log(size);
+
+    this.props.onFilterChangeSize(size);
   }
 
 

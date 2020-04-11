@@ -18,6 +18,7 @@ class ShopContainer extends Component{
 
     this.handleFilterChangeModel = this.handleFilterChangeModel.bind(this);
     this.handleFilterChangeBrand = this.handleFilterChangeBrand.bind(this);
+    this.handleFilterChangeSize= this.handleFilterChangeSize.bind(this);
     this.handleClearFilter = this.handleClearFilter.bind(this);
 
   }
@@ -77,9 +78,35 @@ class ShopContainer extends Component{
     }
   }
 
+  handleFilterChangeSize(size) {
+
+    if (this.state.filterIsOn) {
+      const filteredSneakersBySize = this.state.filteredSneakers.filter((sneaker) => {
+        return sneaker.size == size
+      })
+
+      this.setState({filteredSneakers: filteredSneakersBySize, filterIsOn: true});
+
+    } else {
+      const filteredSneakersBySize = this.state.sneakers.filter((sneaker) => {
+        return sneaker.size == size
+      })
+
+      this.setState({filteredSneakers: filteredSneakersBySize, filterIsOn: true});
+    }
+
+  }
+
 
   handleClearFilter() {
     this.setState({filterIsOn: false});
+
+    let filterBoxes = document.getElementsByClassName('filter-select');
+
+    for (let i=0; i<filterBoxes.length; i++) {
+      filterBoxes[i].selectedIndex = 0
+    }
+
   }
 
 
@@ -128,6 +155,7 @@ class ShopContainer extends Component{
       <Filter
       sneakers={this.state.sneakers} onFilterChangeBrand={this.handleFilterChangeBrand}
       onFilterChangeModel={this.handleFilterChangeModel}
+      onFilterChangeSize={this.handleFilterChangeSize}
       onClearFilter={this.handleClearFilter}
       filter={this.state.filterIsOn}
       filteredSneakers={this.state.filteredSneakers}/>

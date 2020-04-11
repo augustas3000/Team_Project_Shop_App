@@ -16,7 +16,7 @@ class SizeSelect extends Component {
 }
 
 handleSizeChange(event) {
-  console.log(event.target.value);
+  this.props.onSizeSelect(event.target.value)
 }
 
 render() {
@@ -45,7 +45,7 @@ render() {
 
   return(
     <div>
-        <select name="size" onChange={this.handleSizeChange} defaultValue="select-size">
+        <select className="filter-select" name="size" onChange={this.handleSizeChange} defaultValue="select-size">
           <option disabled value="select-size">Available sizes</option>
           {this.props.filterStatus ? sizeOptionsFiltered : sizeOptions}
         </select>

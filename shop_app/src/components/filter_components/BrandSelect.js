@@ -52,7 +52,7 @@ class BrandSelect extends Component {
 
     return(
       <div>
-          <select name="brand" onChange={this.handleBrandChange} defaultValue="select-brand">
+          <select className="filter-select" name="brand" onChange={this.handleBrandChange} defaultValue="select-brand">
             <option disabled value="select-brand">Select a brand</option>
             {this.props.filterStatus ? brandOptionsFiltered : brandOptions}
           </select>

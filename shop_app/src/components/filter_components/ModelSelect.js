@@ -51,7 +51,7 @@ class ModelSelect extends Component {
     return(
 
       <div>
-          <select name="model" onChange={this.handleModelChange} defaultValue="select-model">
+          <select className="filter-select" name="model" onChange={this.handleModelChange} defaultValue="select-model">
             <option disabled value="select-model">Select a model</option>
             {this.props.filterStatus ? modelOptionsFiltered : modelOptions}
           </select>
