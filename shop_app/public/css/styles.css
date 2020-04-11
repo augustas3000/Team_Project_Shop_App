@@ -1,0 +1,46 @@
+.NavBar{
+  background: black;
+  margin: 20px;
+  padding: 10px;
+
+
+}
+.navLink {
+  background: white;
+    margin: 10px;
+    padding: 23px;
+    width: 300px;
+    display: inline;
+    border: 1px solid black;
+
+}
+
+.component {
+  margin: 20px;
+  padding: 10px;
+  width: 200px;
+  heigh: 500px;
+  border: 1px solid black;
+  text-align: center;
+  flex-wrap: wrap;
+  display: inline-block;
+}
+ul.component-list {
+  display: inline;
+  flex-wrap: wrap;
+  width: 100px;
+
+
+}
+
+li.component-item {
+  display: inline;
+
+
+}
+
+.component-item{
+  display: inline;
+
+
+}
